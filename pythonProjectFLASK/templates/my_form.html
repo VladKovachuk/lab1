@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %} Форма {% endblock %}
+
+{% block css %}
+{{ super() }}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+<form action={{url_for("form")}} method="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">name</label>
+    <input type="text" class="form-control" name="name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="text" class="form-control" name="password">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</div>
+
+<br>
+
+<div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+                <div class="card-header">Responce</div>
+                <div class="card-body">
+                  <h4 class="card-title">Success </h4>
+                  <p class="card-text"> {{name}} - {{password}} - {{method}}</p>
+                </div>
+              </div>
+
+{% endblock %}

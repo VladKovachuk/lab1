@@ -1,0 +1,21 @@
+{% set menu = {"Home": url_for("index"),
+         "Домашня": url_for("home"), "Про мене": url_for("about"),
+          "Пости": url_for("post"), "Redirect": url_for("main"), "Форма": url_for("form") }  %}
+
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Navbar</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav me-auto">
+                      {%for name, url  in menu.items() %}
+                      <li class="nav-item">
+                        <a class="nav-link" href={{url}}>  {{name | upper }}   </a>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+</nav>

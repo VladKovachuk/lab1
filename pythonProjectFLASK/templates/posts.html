@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %} POSTs {% endblock %}
+
+{% block body %}
+
+<h1>Posts page</h1>
+<ul>
+    {% for post in posts %}
+    <li>
+        <a href="{{ url_for('post', idx=loop.index) }}"> {{post["author"]}} : {{post["title"]}}</a>
+    </li>
+    {% endfor%}
+</ul>
+
+{% endblock %}
+
+

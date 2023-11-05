@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Base {% endblock %} - My Webpage</title>
+    {% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    {% endblock %}
+</head>
+<body>
+{% include "nav.html" %}
+
+{% block body %}
+<h1>From base template</h1>
+{% endblock %}
+
+{% block js %}
+<script src={{url_for('static', filename='js/script.js')}}></script>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+        {% include 'components/header.html' %}
+        {% block content %}{% endblock %}
+        {% include 'components/footer.html' %}
+    </div>
+
+
+
+
+
+
+
+<h1>Info page. Hi, {{name}} {{suburl}}</h1>
+agent: {{value}}
+</body>
+</html>

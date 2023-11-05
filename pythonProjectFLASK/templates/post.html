@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %} Post #{{idx}} #{% endblock %}
+
+{% block body %}
+<h1>Post №{{idx}}</h1>
+{% if idx < posts.__len__() %}
+    {{posts[idx]}}
+{% else %}
+    idx поста нема
+{% endif %}
+{% endblock %}
+
+
